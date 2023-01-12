@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+*{
+    box-sizing: border-box;
+    
+    /* it will not affect the div box and not will change th e size of the box */
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    background-color: rgb(13, 15, 15);
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 90vh;
+}
+
+.panel {
+    background-size: auto 100%;
+    /* Background image size setting */
+    background-position: center;
+    /* position of image setting */
+    background-repeat: no-repeat;
+    height: 80vh;
+    /* height of panel of image is setting it is vertical height it is 100vh 
+    we are alocating only 80vh it will vesibale to use properly other we can user like px, % , etc  */
+    border-radius: 50px;
+    color: rgb(8, 235, 68);
+    /* text color setting  */
+    cursor:pointer ; 
+    /* cursor are using for when cursor is went to image than it will chnage to hand couser like 
+    clicabal pointer */
+    flex: 0.7;
+    margin: 10px;
+    /* gap between images or components or panel */
+    position: relative;
+    /* h3 tag will relative */
+    transition: flex 1s ease-in;
+    /* slide opening time in second */
+}
+
+.panel h3 {
+    font-size: 20px;
+    position: absolute;
+    bottom: 40px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+ }
+
+ .panel.active {
+    flex: 5;
+ }
+ .panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s ;
+ }
+
+ @media (max-width:480px) {
+    .container{
+        width: 100vh;
+    }
+
+    .panel:nth-of-type(4),.panel:nth-of-type(5){
+        display: none;
+    }
+ }
